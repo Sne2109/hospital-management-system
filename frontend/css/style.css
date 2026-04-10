@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* LOGIN PAGE */
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #3498db, #6dd5fa);
+}
+
+.login-card {
+  width: 300px;
+  padding: 30px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  outline: none;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.login-card button {
+  width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #2c3e50;
+  position: fixed;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: #34495e;
+}
+
+/* MAIN */
+.main {
+  margin-left: 220px;
+}
+
+/* HEADER */
+.header {
+  background: #3498db;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CONTENT */
+.container {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+/* BUTTON */
+button {
+  background: #3498db;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d6fa5;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #3498db;
+  color: white;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+tr:hover {
+  background: #f1f1f1;
+}
+
+/* STATUS */
+.pending {
+  background: orange;
+  color: white;
+  padding: 5px;
+}
+
+.completed {
+  background: green;
+  color: white;
+  padding: 5px;
+}
+
+/* IMAGE */
+.dashboard-img {
+  width: 75%;
+  border-radius: 10px;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+/* Billing specific (optional highlight) */
+.card h3 {
+  color: #2c3e50;
+}
+
+/* Amount highlight */
+.amount {
+  color: green;
+  font-weight: bold;
+}

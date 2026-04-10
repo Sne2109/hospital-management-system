@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+<a href="dashboard.html">Dashboard</a>
+<a href="doctor.html">Doctors</a>
+<a href="appointment.html">Appointments</a>
+<a href="billing.html">Billing</a>
+</div>
+
+<div class="main">
+
+<div class="header">
+<h2>Hospital Dashboard</h2>
+<button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>We Heal You!!</h2>
+<img src="https://www.appletechsoft.com/wp-content/uploads/2020/06/Hospital-Management-System.jpg" class="dashboard-img">
+</div>
+
+<div class="card">
+<h3>Total Doctors: <span id="totalDoctors"></span></h3>
+<h3>Total Appointments: <span id="totalAppointments"></span></h3>
+<h3>Pending: <span id="pendingAppointments"></span></h3>
+<h3>Completed: <span id="completedAppointments"></span></h3>
+</div>
+
+</div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script>
+checkLogin();
+loadDashboard();
+</script>
+
+</body>
+</html>
