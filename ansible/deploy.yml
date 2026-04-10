@@ -1,20 +1,25 @@
-- name: Deploy Hospital App
-  hosts: servers
-  become: true
+- name: Deploy Hospital Management System using Docker
+  hosts: localhost
+  connection: local
+  become: yes
 
   tasks:
-    - name: Install Docker
-      apt:
-        name: docker.io
-        state: present
 
-    - name: Start Docker
-      service:
-        name: docker
-        state: started
+    - name: Check Docker is installed
+      command: docker --version
+      register: docker_version
+      ignore_errors: yes
 
-    - name: Build Image
-      command: docker build -t hospital-app ..
+    - name: Show Docker version
+      debug:
+        var: docker_version.stdout
 
-    - name: Run Container
-      command: docker run -d -p 8080:80 hospital-app
+    - name: Build Docker image
+      command: docker build -t hospital-app .
+
+    - name: Stop old container if running
+      command: docker rm -f hospital-container
+      ignore_errors: yes
+
+    - name: Run new container
+      command: docker run -d -p 8080:80 --name hospital-container hospital-app
