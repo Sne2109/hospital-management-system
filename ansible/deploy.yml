@@ -1,11 +1,11 @@
-- name: Deploy Hospital Management System using Docker
+- name: Deploy Hospital App using Docker
   hosts: localhost
   connection: local
   become: yes
 
   tasks:
 
-    - name: Check Docker is installed
+    - name: Check Docker version
       command: docker --version
       register: docker_version
       ignore_errors: yes
@@ -14,12 +14,14 @@
       debug:
         var: docker_version.stdout
 
-    - name: Build Docker image
-      command: docker build -t hospital-app .
+    - name: Build Docker Image (correct path)
+      command: docker build -t hospital-app ..
+      args:
+        chdir: "{{ playbook_dir }}"
 
-    - name: Stop old container if running
+    - name: Stop old container
       command: docker rm -f hospital-container
       ignore_errors: yes
 
-    - name: Run new container
+    - name: Run container
       command: docker run -d -p 8080:80 --name hospital-container hospital-app
